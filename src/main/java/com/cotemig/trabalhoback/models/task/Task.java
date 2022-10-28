@@ -7,9 +7,10 @@ import javax.persistence.*;
 import java.util.Date;
 
 
-public class Task {@Entity
+@Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "tasks")
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
