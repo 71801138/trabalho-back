@@ -15,6 +15,8 @@ public class User {
     private String name = "";
     private String imageUrl = "";
 
+    public User() { }
+
     public User(String name, String imageUrl) {
         this.name = name;
         this.imageUrl = imageUrl;
