@@ -1,6 +1,17 @@
 package com.cotemig.trabalhoback.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String name = "";
     private String imageUrl = "";
 
@@ -8,6 +19,7 @@ public class User {
         this.name = name;
         this.imageUrl = imageUrl;
     }
+
     public String getName() {
         return name;
     }
@@ -22,5 +34,14 @@ public class User {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 }
