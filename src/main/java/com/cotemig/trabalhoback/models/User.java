@@ -22,6 +22,10 @@ public class User {
         this.imageUrl = imageUrl;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
