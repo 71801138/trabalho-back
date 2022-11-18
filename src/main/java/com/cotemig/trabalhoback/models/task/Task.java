@@ -16,6 +16,7 @@ public class Task {
     private long id;
     private String name = "";
     private String description = "";
+    private Integer status = 1;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date estimate;
     private long userId;
@@ -24,17 +25,26 @@ public class Task {
 
     public Task() { }
 
-    public Task(String name, String description, Date estimate, long userId, long typeId, long kanbanStepId) {
+    public Task(String name, String description, Date estimate, long userId, long typeId, long kanbanStepId, Integer status) {
         this.name = name;
         this.description = description;
         this.estimate = estimate;
         this.userId = userId;
         this.typeId = typeId;
         this.kanbanStepId = kanbanStepId;
+        this.status = status;
     }
 
     public String getName() {
         return name;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public void setName(String name) {

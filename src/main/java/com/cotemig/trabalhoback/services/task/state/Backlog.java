@@ -1,18 +1,27 @@
 package com.cotemig.trabalhoback.services.task.state;
 
+import com.cotemig.trabalhoback.models.task.Task;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Backlog extends AbstractState {
 
-    @Override
-    protected String getNameState() {
-        return "Backlog";
+    public Backlog(Task task) {
+        super(task);
+    }
+
+    public Backlog() {
     }
 
     @Override
-    protected Boolean change(AbstractState nextState) {
-        return null;
+    protected Integer getIdState() {
+        return 1;
+    }
+
+    @Override
+    protected Boolean afterChange(AbstractState nextState) {
+        return true;
     }
 
     @Override

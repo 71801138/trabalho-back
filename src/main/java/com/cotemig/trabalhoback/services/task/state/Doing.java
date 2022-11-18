@@ -1,16 +1,24 @@
 package com.cotemig.trabalhoback.services.task.state;
 
+import com.cotemig.trabalhoback.models.task.Task;
+
 public class Doing extends AbstractState {
-    @Override
-    protected String getNameState() {
-        return "Fazendo";
+
+    public Doing(Task task) {
+        super(task);
+    }
+
+    public Doing() {
+    }
+
+    protected Integer getIdState() {
+        return 3;
     }
 
     @Override
-    protected Boolean change(AbstractState nextState) {
-        return null;
+    protected Boolean afterChange(AbstractState nextState) {
+        return true;
     }
-
     @Override
     protected AbstractState nextState() {
         return new Done();
