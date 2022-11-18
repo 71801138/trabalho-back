@@ -36,9 +36,9 @@ public abstract class AbstractState {
     }
 
     public Boolean changeToNextState() {
-        Integer idStatus = this.getIdState();
+        Integer idStatus = this.nextState();
         this.change(idStatus);
-        this.afterChange(this.nextState());
+        this.afterChange();
         return true;
     }
 
@@ -49,15 +49,15 @@ public abstract class AbstractState {
     }
 
     private void generateLog(AbstractState nextState){
-        System.out.println("Implementação do Log");
-    }
 
+
+    }
 
     protected abstract Integer getIdState();
 
-    protected abstract Boolean afterChange(AbstractState nextState);
+    protected abstract Boolean afterChange();
 
-    protected abstract AbstractState nextState();
+    protected abstract Integer nextState();
 
 
 }

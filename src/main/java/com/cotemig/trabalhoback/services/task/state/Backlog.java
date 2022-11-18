@@ -20,12 +20,12 @@ public class Backlog extends AbstractState {
     }
 
     @Override
-    protected Boolean afterChange(AbstractState nextState) {
+    protected Boolean afterChange() {
         return true;
     }
 
     @Override
-    protected AbstractState nextState() {
-        return new ToDo();
+    protected Integer nextState() {
+        return new ToDo().getIdState();
     }
 }

@@ -18,12 +18,12 @@ public class ToDo extends AbstractState {
     }
 
     @Override
-    protected Boolean afterChange(AbstractState nextState) {
+    protected Boolean afterChange() {
         return true;
     }
 
     @Override
-    protected AbstractState nextState() {
-        return new Doing();
+    protected Integer nextState() {
+        return new Doing().getIdState();
     }
 }

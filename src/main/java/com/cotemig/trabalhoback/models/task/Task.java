@@ -23,7 +23,16 @@ public class Task {
     private long typeId;
     private long kanbanStepId;
 
-    public Task() { }
+    public Task(Integer id, String name, String description, Date estimate, long userId, long typeId, long kanbanStepId, Integer status) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.estimate = estimate;
+        this.userId = userId;
+        this.typeId = typeId;
+        this.kanbanStepId = kanbanStepId;
+        this.status = status;
+    }
 
     public Task(String name, String description, Date estimate, long userId, long typeId, long kanbanStepId, Integer status) {
         this.name = name;
@@ -33,6 +42,14 @@ public class Task {
         this.typeId = typeId;
         this.kanbanStepId = kanbanStepId;
         this.status = status;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {

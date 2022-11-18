@@ -16,11 +16,11 @@ public class Done extends  AbstractState {
     }
 
     @Override
-    protected Boolean afterChange(AbstractState nextState) {
+    protected Boolean afterChange() {
         return true;
     }
     @Override
-    protected AbstractState nextState() {
-        return new Closed();
+    protected Integer nextState() {
+        return new Closed().getIdState();
     }
 }

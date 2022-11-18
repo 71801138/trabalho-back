@@ -16,12 +16,12 @@ public class Closed extends AbstractState {
     }
 
     @Override
-    protected Boolean afterChange(AbstractState nextState) {
+    protected Boolean afterChange() {
         return true;
     }
 
     @Override
-    protected AbstractState nextState() {
-        return null;
+    protected Integer nextState() {
+        return 5;
     }
 }
